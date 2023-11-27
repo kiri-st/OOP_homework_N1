@@ -3,15 +3,15 @@ class Student:
         self.name = name
         self.surname = surname
         self.gender = gender
-        self.finished_courses = []                    # список курсов, которые уже завершены
-        self.courses_in_progress = []                 # список курсов, которые сейчас изучаются
-        self.grades = {}                              # словарь с оценками студентов
+        self.finished_courses = []
+        self.courses_in_progress = []
+        self.grades = {}
 
 class Mentor:
     def __init__(self, name, surname):
         self.name = name
         self.surname = surname
-        self.courses_attached = []                    # список закрепленных за преподавателями курсов
+        self.courses_attached = []
 
     def rate_hw(self, student, course, grade):
         if isinstance(student, Student) and course in self.courses_attached and course in student.courses_in_progress:
@@ -21,7 +21,13 @@ class Mentor:
                 student.grades[course] = [grade]
         else:
             return 'Ошибка'
-
+# ======================================================================================================================
+# Задание № 1. Наследование
+class Lecturer(Mentor):
+    pass
+class Reviewer(Mentor):
+    pass
+# ======================================================================================================================
 best_student = Student('Ruoy', 'Eman', 'your_gender')
 best_student.courses_in_progress += ['Python']
 

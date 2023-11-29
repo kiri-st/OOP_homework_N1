@@ -1,5 +1,4 @@
 class Student:
-
     def __init__(self, name, surname, gender):
         self.name = name
         self.surname = surname
@@ -8,7 +7,6 @@ class Student:
         self.courses_in_progress = []
         self.grades = {}
         self.average_grade = 0
-
     def rate_lectur(self, lectur, course, grades):
         if (isinstance(lectur, Lecturer) and course in lectur.courses_attached and course in self.courses_in_progress
         and grades in range(0,11)):
